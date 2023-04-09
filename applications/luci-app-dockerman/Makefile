@@ -26,8 +26,8 @@ uci set dockerd.dockerman.remote_endpoint=`uci get dockerd.dockerman.remote_endp
 uci del_list dockerd.dockerman.ac_allowed_interface='br-lan'
 uci add_list dockerd.dockerman.ac_allowed_interface='br-lan'
 uci commit dockerd
-endef
 }
+endef
 include ../../luci.mk
 
 # call BuildPackage - OpenWrt buildroot signature
