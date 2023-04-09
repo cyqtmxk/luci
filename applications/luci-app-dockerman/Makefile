@@ -14,7 +14,7 @@ PKG_MAINTAINER:=lisaac <lisaac.cn@gmail.com>
 define Package/luci-app-dockerman/postinst
 #!/bin/sh
 
-/init.sh env
+/bin/sh/init.sh env
 touch /etc/config/dockerd
 uci set dockerd.dockerman=dockerman
 uci set dockerd.dockerman.socket_path=`uci get dockerd.dockerman.socket_path 2&> /dev/null || echo '/var/run/docker.sock'`
