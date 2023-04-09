@@ -13,8 +13,8 @@ PKG_MAINTAINER:=lisaac <lisaac.cn@gmail.com>
 
 define Package/luci-app-dockerman/postinst
 #!/bin/sh
-
-/bin/sh/init.sh env
+[ -n "$${IPKG_INSTROOT}" ] || {
+/init.sh env
 touch /etc/config/dockerd
 uci set dockerd.dockerman=dockerman
 uci set dockerd.dockerman.socket_path=`uci get dockerd.dockerman.socket_path 2&> /dev/null || echo '/var/run/docker.sock'`
@@ -27,7 +27,7 @@ uci del_list dockerd.dockerman.ac_allowed_interface='br-lan'
 uci add_list dockerd.dockerman.ac_allowed_interface='br-lan'
 uci commit dockerd
 endef
-
+}
 include ../../luci.mk
 
 # call BuildPackage - OpenWrt buildroot signature
