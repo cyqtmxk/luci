@@ -72,4 +72,4 @@ fi
 exit 0
 endef
 
-$(eval $(call BuildPackage,luci-app-adguardhome))
+include ../../luci.mk
