@@ -18,12 +18,6 @@ var callSystemInfo = rpc.declare({
 	method: 'info'
 });
 
-var callCPUInfo = rpc.declare({
-        object: 'luci',
-        method: 'getCPUInfo'
-});
-
-
 return baseclass.extend({
 	title: _('System'),
 
@@ -38,7 +32,6 @@ return baseclass.extend({
 	render: function(data) {
 		var boardinfo   = data[0],
 		    systeminfo  = data[1],
-		    cpuinfo     = data[2],
 		    luciversion = data[3];
 
 		luciversion = luciversion.branch + ' ' + luciversion.revision;
@@ -62,7 +55,6 @@ return baseclass.extend({
 			_('Hostname'),         boardinfo.hostname,
 			_('Model'),            boardinfo.model,
 			_('Architecture'),     boardinfo.system,
-			_('CPUinfo'),          cpuinfo.cputemp, 
 			_('Target Platform'),  (L.isObject(boardinfo.release) ? boardinfo.release.target : ''),
 			_('Firmware Version'), (L.isObject(boardinfo.release) ? boardinfo.release.description + ' / ' : '') + (luciversion || ''),
 			_('Kernel Version'),   boardinfo.kernel,
