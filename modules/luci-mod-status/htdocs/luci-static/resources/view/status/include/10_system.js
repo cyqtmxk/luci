@@ -32,7 +32,7 @@ return baseclass.extend({
 	render: function(data) {
 		var boardinfo   = data[0],
 		    systeminfo  = data[1],
-		    luciversion = data[3];
+		    luciversion = data[2];
 
 		luciversion = luciversion.branch + ' ' + luciversion.revision;
 
