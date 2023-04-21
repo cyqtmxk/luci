@@ -87,14 +87,6 @@ const methods = {
 		}
 	},
 	
-getCPUInfo = {
-                call = function()
-                        local sys = require "luci.sys"
-                        local rv = {}
-                        rv.cputemp      = sys.exec("sensors | grep temp1| awk -F  ':' '{print $2}'")
-                        return rv
-                end
-        },
 	getTimezones: {
 		call: function(request) {
 			let tz = trim(readfile('/etc/TZ'));
