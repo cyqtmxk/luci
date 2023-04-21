@@ -66,8 +66,7 @@ const methods = {
 		}
 	},
 
-	
-	time: {
+	getLocaltime: {
 		call: function(request) {
 			return { result: time() };
 		}
