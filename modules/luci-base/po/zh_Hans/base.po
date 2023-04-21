@@ -998,10 +998,6 @@ msgstr "正在等待配置被应用… %ds"
 msgid "Architecture"
 msgstr "架构"
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.js:65
-msgid "CPUinfo"
-msgstr "CPU信息"
-
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/diagnostics.js:152
 msgid "Arp-scan"
 msgstr "Arp 扫描"
