@@ -26,6 +26,7 @@ LUCI_DEPENDS:=\
 	+ucode-mod-html \
     +lm-sensors \
     +lscpu \
+    +coremark \
 	+liblucihttp-ucode
 
 PKG_LICENSE:=MIT
