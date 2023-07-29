@@ -25,6 +25,7 @@ LUCI_DEPENDS:=\
 	+ucode-mod-math \
 	+ucode-mod-html \
     +lm-sensors \
+    +lm-sensors-detect \
     +lscpu \
     +coremark \
 	+liblucihttp-ucode
