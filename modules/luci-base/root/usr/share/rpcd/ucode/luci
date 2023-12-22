@@ -26,8 +26,8 @@ const methods = {
     getCPUInfo: {
         call: function(request) {
         let rv = {};
-        system("sensors | grep temp1| awk -F ':' '{print $2}' > /tmp/cputemp");
-        system("lscpu | grep Architecture | awk -F ':' '{print $2}' > /tmp/cpuarch");
+        system("sensors | grep temp1| awk  '{print $2}' > /tmp/cputemp");
+        system("lscpu | grep Architecture | awk  '{print $2}' > /tmp/cpuarch");
         rv.cputemp = trim(readfile('/tmp/cputemp'));
         rv.cpuarch = trim(readfile('/tmp/cpuarch'));
         return rv;
